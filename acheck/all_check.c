@@ -16,7 +16,7 @@ void all_check_show_check(void)
 {
 	for (int i = 0; i < MAX_SIZE; ++i) {
 		if (buffer[i].func) {
-			printf("[all_check]%s %d false counter(%u) \r\n", buffer[i].func, buffer[i].line, buffer[i].counter);	\
+			ALL_PRINTF("[all_check]%s %s false counter(%u) \r\n", buffer[i].func, buffer[i].line, buffer[i].counter);	\
 		}
 		else {
 			return;
