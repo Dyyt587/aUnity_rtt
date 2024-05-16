@@ -32,9 +32,12 @@ typedef struct _cvector *cvector;
 extern "C" {
 # endif
  
- #define CVECTOR_ITERATOR_FOREACH(cv, iter) \
+#define CVECTOR_ITERATOR_FOREACH(cv, iter) \
 	for (iter = cvector_begin(cv); iter != cvector_end(cv); iter = cvector_next(cv, iter)) 
-	
+
+#define CVECTOR_FOREACH(cv,iter,type) \
+	for (iter = (type*)cvector_begin(cv); iter != (type*)cvector_end(cv); iter = (type*)cvector_next(cv, iter)) 
+
 	cvector   cvector_create   (const size_t size                           );
 	void      cvector_destroy  (const cvector cv                            );
 	size_t    cvector_length   (const cvector cv                            );
