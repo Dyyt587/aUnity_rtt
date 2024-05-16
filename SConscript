@@ -3,13 +3,13 @@ from building import *
 import os
 
 cwd = GetCurrentDir()
-src = Glob('*.c') + Glob('*.cpp')
+src = Glob('**.c')
 inc = [cwd]
 
 
 CXXFLAGS = ''
 
 
-group = DefineGroup('perf_counter', src, depend = ['PKG_USING_AUNITY'], CPPPATH = inc, CXXFLAGS = CXXFLAGS)
+group = DefineGroup('aUnity', src, depend = ['PKG_USING_AUNITY'], CPPPATH = inc, CXXFLAGS = CXXFLAGS)
 
 Return('group')
